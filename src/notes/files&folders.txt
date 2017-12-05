@@ -1,0 +1,19 @@
+
+1. tslint.json: Will ask us to follow, best coding practices for typescript.
+2. tsconfig.json: This is typescript configuration file. 
+3. protractor.conf.js: Configuration file for automation test cases.
+4. package.json: This is file which is required for all node applicaction.
+    dependencies:  Packages which will be part of our production build and will be used on our code.
+    devDependencies:  Packages which will help us for development.
+5. karma.conf.js: This is our configuration file for unit testing.
+6  .angular-cli.json: This is config file for angualr cli.
+
+
+
+src:
+Code goes into this folder.
+
+node_modules: 
+All the packages will be downloaded into this folder.
+
+e2e: This is where our automation code goes.

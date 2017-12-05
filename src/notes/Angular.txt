@@ -1,0 +1,12 @@
+Versions:
+AngularJs - 1.6.7 -- current Versions
+Angular - 4 - LTS , 5 - current Version , 2 - old Version
+
+Why Angular:
+1. This is a framework, not a library.
+2. Browser compatibilty, cross platoform.
+3. Cross-Platform Development.
+4. It uses lot of design patterns: MVC, singleton, DI, decorator.
+5. Testing.
+
+
