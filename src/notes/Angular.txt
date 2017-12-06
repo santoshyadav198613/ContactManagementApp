@@ -9,4 +9,22 @@ Why Angular:
 4. It uses lot of design patterns: MVC, singleton, DI, decorator.
 5. Testing.
 
+interview question:
+https://github.com/santoshyadav198613/ShoppingApp-Edureka/tree/master/src/app/interview-question
 
+
+Angular Module:
+Angular follows modular structure.
+It has component based architecture.
+
+1. component
+2. service
+3. directives
+4. pipes
+5. Modules
+
+
+SPA: 
+
+Single Page Application
+Master page:

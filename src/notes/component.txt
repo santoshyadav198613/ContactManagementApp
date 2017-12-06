@@ -1,0 +1,44 @@
+appModule:
+
+Our application should have at lease one angular module , and AppModule is Our
+root module by default.
+
+
+@NgModule:
+
+This is a decorator / attributes / annotation:
+
+decorator pattern is something which will add some extra functionality to your class.
+
+This is to tell angular compiler, that this class is an Angular Module.
+
+properties:
+
+It should register all different directive/components/pipes/services/modules.
+
+1. declarations: This is to register your component/directive/pipes
+2. imports: This is to register any third party module/angular built-in module and our own module.
+3. providers: This is to register services.
+4. bootstrap: This property is only availbale with our root module.
+
+
+1. What:
+
+Component is something which will have its view,class and metadata
+
+creating an custom html tag.
+
+@Component: decorator which will tell angulrr that this class is an component.
+
+proprties: 
+1. selector: this is our html tag.
+2. templateUrl: This is html for our component.
+3. template: to define inline html.
+4. 
+
+How to create a component:
+ng g c <component _name>
+
+
+How to use a component
+

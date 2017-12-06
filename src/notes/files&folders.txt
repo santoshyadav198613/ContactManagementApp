@@ -13,6 +13,16 @@
 src:
 Code goes into this folder.
 
+1. typings.d.ts: Type definition file for node.
+2. tsconfig.spec.json : typescript config file for unit test.
+3. tsconfig.app.json : typescript config file for app code.
+4. test.ts : This file is required by karma.conf.js and loads recursively all the .spec and framework files
+5. styles.css: Global css file.
+6. polyfills.ts:  will provide the compatibilty for older browsers.  
+7. main.ts: entry point for our angular app.
+8. Index.html: Main page for our app.
+
+
 node_modules: 
 All the packages will be downloaded into this folder.
 
