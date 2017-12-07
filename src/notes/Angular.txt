@@ -8,6 +8,8 @@ Why Angular:
 3. Cross-Platform Development.
 4. It uses lot of design patterns: MVC, singleton, DI, decorator.
 5. Testing.
+6. Template Engine -Angular has its own template engine, it converts html to JS.
+
 
 interview question:
 https://github.com/santoshyadav198613/ShoppingApp-Edureka/tree/master/src/app/interview-question

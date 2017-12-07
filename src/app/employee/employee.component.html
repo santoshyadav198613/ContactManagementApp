@@ -2,5 +2,73 @@
   Employee Component
 
 </h1>
+Employee Name : {{empName}} {{lastName}}
+
+<div [ngClass]="{'alert alert-danger' : visible }"  [id]="empId" [innerText]="empId">
+
+</div>
+
+<div *ngIf="visible" [id]="empId" [innerText]="empId">
+
+</div>
+
+<button type="button" (click)="toggle()">Toggle</button>
 
 <con-department></con-department>
+
+
+{{employeeList | json }}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Sr.No</th>
+      <th>Even</th>
+      <th>Odd</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>DOB</th>
+      <th>Address</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeeList;let i=index; let even= even; let odd = odd">
+      <td [ngClass]="{'alert alert-danger' : even }">{{i}}</td>
+      <td >{{even}}</td>
+      <td>{{odd}}</td>
+      <td [ngClass]="{'alert alert-success' : odd }">
+        {{employee.id}}
+      </td>
+      <td>
+        {{employee.name}}
+      </td>
+      <td>
+        {{employee.dob}}
+      </td>
+      <td>
+        {{employee.address}}
+      </td>
+      <td>
+        {{employee.salary}}
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+<div [ngSwitch]="empRole">
+  <div *ngSwitchCase="'Super Admin'">
+    This is Super Admin View
+  </div>
+  <div *ngSwitchCase="'Admin'">
+    This is Admin View
+  </div>
+  <div *ngSwitchCase="'User'">
+    This is User View
+  </div>
+  <div *ngSwitchCaseDefault>
+    This is Default View
+  </div>
+</div>
