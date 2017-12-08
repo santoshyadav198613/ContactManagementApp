@@ -21,14 +21,18 @@ export class EmployeeComponent {
     { id: 5, name: 'Vijay', address: 'Mumbai', dob: new Date('12-Nov-1985'), salary: 85000 },
   ];
   empRole: string = 'Super Admin';
-
   // employeeList : Array<Employee> = 
-
+  empFromChild: Employee= new Employee();
   constructor() { }
 
 
   toggle() {
     this.visible = !this.visible;
+  }
+
+
+  employeefromChild(emp: Employee) {
+    this.empFromChild = emp;
   }
 }
 

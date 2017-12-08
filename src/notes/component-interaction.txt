@@ -1,0 +1,9 @@
+What is component interaction:
+The way to communicate between multiple components.
+
+How:
+1. html
+    a.  @Input() - when we want to pass data to child component.
+    b. 
+2. typescript
+3. services

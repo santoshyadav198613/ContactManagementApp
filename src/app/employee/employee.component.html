@@ -16,47 +16,11 @@ Employee Name : {{empName}} {{lastName}}
 
 <con-department></con-department>
 
+<hr>
 
-{{employeeList | json }}
+<con-employee-list [employee]="employeeList" [headerText]="'Employee List'" (selectedEmployee)="employeefromChild($event)"></con-employee-list>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Sr.No</th>
-      <th>Even</th>
-      <th>Odd</th>
-      <th>ID</th>
-      <th>Name</th>
-      <th>DOB</th>
-      <th>Address</th>
-      <th>Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let employee of employeeList;let i=index; let even= even; let odd = odd">
-      <td [ngClass]="{'alert alert-danger' : even }">{{i}}</td>
-      <td >{{even}}</td>
-      <td>{{odd}}</td>
-      <td [ngClass]="{'alert alert-success' : odd }">
-        {{employee.id}}
-      </td>
-      <td>
-        {{employee.name}}
-      </td>
-      <td>
-        {{employee.dob}}
-      </td>
-      <td>
-        {{employee.address}}
-      </td>
-      <td>
-        {{employee.salary}}
-      </td>
-    </tr>
-  </tbody>
-
-</table>
-
+{{empFromChild | json}}
 
 <div [ngSwitch]="empRole">
   <div *ngSwitchCase="'Super Admin'">
