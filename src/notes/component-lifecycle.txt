@@ -1,0 +1,9 @@
+component lifecycle:
+
+1. constructor - no code to be writte, only to be used for initilization.
+2. ngOnInit - it is our load event, in case we want some data to be loaded on page load 
+for a component use this event.
+3. ngOnChanges: will be called when an property with Input decorator changes the value.
+4. ngDoCheck:  will be called after init and after that any event is triggered.
+never implement ngOnChanges and ngDoCheck together.
+5. ngOnDestroy: This is the last event in component lifecycle.

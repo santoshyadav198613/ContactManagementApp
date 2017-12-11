@@ -4,6 +4,10 @@ The way to communicate between multiple components.
 How:
 1. html
     a.  @Input() - when we want to pass data to child component.
-    b. 
+    b.  @Output() - when we want to receive the data from child component.
+        EventEmitter-- to create a custom event
+        $event -- to be used in function in parent component
 2. typescript
+    1. ViewChild -- To get access to the first html tag.   
+    2. ViewChildren  -- To get access to all the tags of similar type.  
 3. services

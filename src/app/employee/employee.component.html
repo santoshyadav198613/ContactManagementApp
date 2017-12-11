@@ -18,9 +18,13 @@ Employee Name : {{empName}} {{lastName}}
 
 <hr>
 
-<con-employee-list [employee]="employeeList" [headerText]="'Employee List'" (selectedEmployee)="employeefromChild($event)"></con-employee-list>
+<div *ngIf="visible">
+    <con-product></con-product>    
+</div>
 
-{{empFromChild | json}}
+<!-- <con-employee-list [employee]="employeeList" [headerText]="'Employee List'" (selectedEmployee)="employeefromChild($event)"></con-employee-list> -->
+
+<!-- {{empFromChild | json}} -->
 
 <div [ngSwitch]="empRole">
   <div *ngSwitchCase="'Super Admin'">
