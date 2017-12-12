@@ -1,0 +1,45 @@
+Service:
+
+1. code reusability.
+2. To interact with API
+3. We seperate our business logic.
+4. To share the data between multiple component.
+5. time for code maintenance will be very low.
+
+Types of service:
+1. Class based services
+    An typescript class which will be registered and used as service.
+How to create:
+1. ng g service <service_name> //do not append service
+
+After service is create it should be registered to use.
+
+2. Non-class services
+
+
+
+DI:
+
+Dependency Injection: 
+It is a widely used design pattern.
+Never create an instance of class directly,always inject them.
+
+Singleton:
+
+Single instance of object will be available.
+
+How to create a Singleton service:
+Register your service with angular module, using providers property.
+
+Observable:
+
+This is suggested feature in ES7.
+streams- it returnd data in streams.
+provide different functions:
+http://reactivex.io/rxjs/
+
+
+Non-Singleton:
+
+Register a service with component.
+

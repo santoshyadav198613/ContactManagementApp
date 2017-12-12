@@ -11,6 +11,8 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { HeaderComponent } from './header/header.component';
 
+import { ProductService } from './service/product/product.service';
+import { NewproductService } from './service/product/newproduct.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    // ProductService, shortcut
+    { provide: ProductService, useClass: NewproductService }
+  ],
   bootstrap: [EmployeeComponent]
 })
 export class AppModule { }

@@ -5,12 +5,15 @@ import {
 
 import { ProductListComponent } from './product-list/product-list.component';
 
-import { Product } from './product';
+import { Product } from '../service/product/product';
+import { ProductService } from '../service/product/product.service';
 
 @Component({
   selector: 'con-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
+  //,
+  // providers: [ProductService]
 })
 export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy {
   @ViewChild(ProductListComponent)
@@ -19,15 +22,19 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   @ViewChildren(ProductListComponent)
   productChildrenComponent: QueryList<ProductListComponent>;
   products: Product[] = [];
-  constructor() { }
+  // productService : ProductService =new ProductService();
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     console.log(this.productChildrenComponent);
-    this.products = [
-      { id: 1, name: 'HD TV', price: 1000, mfd: new Date('11-oct-2015') },
-      { id: 2, name: '2 ton AC', price: 2000, mfd: new Date('11-oct-2016') },
-      { id: 3, name: 'Refigerator', price: 5000, mfd: new Date('11-oct-2017') }
-    ];
+    // this.products = [
+    //   { id: 1, name: 'HD TV', price: 1000, mfd: new Date('11-oct-2015') },
+    //   { id: 2, name: '2 ton AC', price: 2000, mfd: new Date('11-oct-2016') },
+    //   { id: 3, name: 'Refigerator', price: 5000, mfd: new Date('11-oct-2017') }
+    // ];
+    this.productService.getProducts().subscribe(
+      (res) => this.products = res
+    );
     this.productListComponent.productList = this.products;
 
   }
@@ -45,11 +52,11 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   }
 
   sendProduct() {
-    this.products = [
-      { id: 1, name: 'HD TV', price: 1000, mfd: new Date('11-oct-2015') },
-      { id: 2, name: '2 ton AC', price: 2000, mfd: new Date('11-oct-2016') },
-      { id: 3, name: 'Refigerator', price: 5000, mfd: new Date('11-oct-2017') }
-    ];
+    // this.products = [
+    //   { id: 1, name: 'HD TV', price: 1000, mfd: new Date('11-oct-2015') },
+    //   { id: 2, name: '2 ton AC', price: 2000, mfd: new Date('11-oct-2016') },
+    //   { id: 3, name: 'Refigerator', price: 5000, mfd: new Date('11-oct-2017') }
+    // ];
     // this.productListComponent.productList = this.products;
 
     console.log(this.productChildrenComponent);

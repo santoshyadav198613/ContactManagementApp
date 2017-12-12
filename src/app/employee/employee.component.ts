@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Employee } from './employee';
 
+import { ProductService } from '../service/product/product.service';
+
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -23,10 +25,11 @@ export class EmployeeComponent {
   empRole: string = 'Super Admin';
   // employeeList : Array<Employee> = 
   empFromChild: Employee= new Employee();
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
 
   toggle() {
+    this.productService.addProduct();
     this.visible = !this.visible;
   }
 
