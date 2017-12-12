@@ -1,4 +1,7 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList, DoCheck ,OnDestroy} from '@angular/core';
+import {
+  Component, OnInit, ViewChild, ViewChildren,
+  QueryList, DoCheck, OnDestroy, AfterViewInit
+} from '@angular/core';
 
 import { ProductListComponent } from './product-list/product-list.component';
 
@@ -9,7 +12,7 @@ import { Product } from './product';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit, DoCheck, OnDestroy {
+export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy {
   @ViewChild(ProductListComponent)
   productListComponent: ProductListComponent;
 
@@ -19,6 +22,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.productChildrenComponent);
     this.products = [
       { id: 1, name: 'HD TV', price: 1000, mfd: new Date('11-oct-2015') },
       { id: 2, name: '2 ton AC', price: 2000, mfd: new Date('11-oct-2016') },
@@ -33,6 +37,13 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     console.log('this is do check event');
   }
 
+  ngAfterViewInit(): void {
+    console.log(this.productChildrenComponent);
+    this.productChildrenComponent.forEach(
+      (productComponent) => setTimeout(() => productComponent.productList = this.products, 0)
+    )
+  }
+
   sendProduct() {
     this.products = [
       { id: 1, name: 'HD TV', price: 1000, mfd: new Date('11-oct-2015') },
@@ -43,13 +54,13 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
 
     console.log(this.productChildrenComponent);
 
-    this.productChildrenComponent.forEach(
-      (productComponent) => productComponent.productList = this.products
-    )
+    // this.productChildrenComponent.forEach(
+    //   (productComponent) => productComponent.productList = this.products
+    // )
 
   }
 
-  ngOnDestroy(): void{
+  ngOnDestroy(): void {
     alert('Are you sure you want to close this component');
   }
 

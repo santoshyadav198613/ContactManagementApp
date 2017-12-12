@@ -9,6 +9,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProductListComponent } from './product/product-list/product-list.compon
     EmployeeListComponent,
     DepartmentListComponent,
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule

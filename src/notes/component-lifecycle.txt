@@ -6,4 +6,6 @@ for a component use this event.
 3. ngOnChanges: will be called when an property with Input decorator changes the value.
 4. ngDoCheck:  will be called after init and after that any event is triggered.
 never implement ngOnChanges and ngDoCheck together.
-5. ngOnDestroy: This is the last event in component lifecycle.
+5. ngAfterContentInit: can be implemented to access the contents of an component.
+6. ngAfterViewInit : It will be called after  everything on view is initialized.
+7. ngOnDestroy: This is the last event in component lifecycle.
