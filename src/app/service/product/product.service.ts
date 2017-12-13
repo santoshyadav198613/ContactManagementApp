@@ -23,5 +23,8 @@ export class ProductService {
     this.products.push(product);
   }
 
+  saveProduct(product: Product) {
+    this.products.push(product);
+  }
 
 }

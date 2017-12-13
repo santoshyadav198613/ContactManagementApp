@@ -1,44 +1,48 @@
-<h1>
-  Employee Component
 
-</h1>
-Employee Name : {{empName}} {{lastName}}
-
-<div [ngClass]="{'alert alert-danger' : visible }"  [id]="empId" [innerText]="empId">
-
-</div>
-
-<div *ngIf="visible" [id]="empId" [innerText]="empId">
-
-</div>
-
-<button type="button" (click)="toggle()">Toggle</button>
-
-<con-department></con-department>
-
-<hr>
-
-<!-- <div *ngIf="visible">
-    <con-product></con-product>    
-</div> -->
-
-<con-product></con-product>    
-
-<!-- <con-employee-list [employee]="employeeList" [headerText]="'Employee List'" (selectedEmployee)="employeefromChild($event)"></con-employee-list> -->
-
-<!-- {{empFromChild | json}} -->
-
-<div [ngSwitch]="empRole">
-  <div *ngSwitchCase="'Super Admin'">
-    This is Super Admin View
-  </div>
-  <div *ngSwitchCase="'Admin'">
-    This is Admin View
-  </div>
-  <div *ngSwitchCase="'User'">
-    This is User View
-  </div>
-  <div *ngSwitchCaseDefault>
-    This is Default View
-  </div>
+<div class="container">
+    <h1>
+        Employee Component
+      
+      </h1>
+      Employee Name : {{empName}} {{lastName}}
+      
+      <div [ngClass]="{'alert alert-danger' : visible }"  [id]="empId" [innerText]="empId">
+      
+      </div>
+      
+      <div *ngIf="visible" [id]="empId" [innerText]="empId">
+      
+      </div>
+      
+      <button type="button" (click)="toggle()">Toggle</button>
+      
+      <con-department></con-department>
+      
+      <hr>
+      
+      <!-- <div *ngIf="visible">
+          <con-product></con-product>    
+      </div> -->
+      
+      <con-product></con-product>    
+      
+      <!-- <con-employee-list [employee]="employeeList" [headerText]="'Employee List'" (selectedEmployee)="employeefromChild($event)"></con-employee-list> -->
+      
+      <!-- {{empFromChild | json}} -->
+      
+      <div [ngSwitch]="empRole">
+        <div *ngSwitchCase="'Super Admin'">
+          This is Super Admin View
+        </div>
+        <div *ngSwitchCase="'Admin'">
+          This is Admin View
+        </div>
+        <div *ngSwitchCase="'User'">
+          This is User View
+        </div>
+        <div *ngSwitchCaseDefault>
+          This is Default View
+        </div>
+      </div>
+      
 </div>

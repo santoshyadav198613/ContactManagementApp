@@ -2,9 +2,13 @@
   Product Form
 </h1>
 <div class="row">
+
+  <div class="alert alert-success" *ngIf="this.message !== undefined">
+    {{this.message }}
+  </div>
   {{product | json}} {{productForm.invalid | json }} {{productForm.valid | json }} {{productForm.pristine | json }} {{productForm.dirty
   | json }} {{productForm.touched | json }} {{productForm.value | json }}
-  <form #productForm="ngForm" (submit)="save()" class="col-md-6">
+  <form #productForm="ngForm" (submit)="save(productForm)" class="col-md-6">
     <div class="form-group">
       <input required class="form-control" #id="ngModel" type="number" placeholder="Id" name="id" [(ngModel)]="product.id"> {{id.invalid|json}} {{id.valid|json}} {{id.pristine|json}} {{id.dirty|json}} {{id.touched|json}} {{id.value|json}}
       {{id.errors|json}}

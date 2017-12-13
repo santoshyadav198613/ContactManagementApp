@@ -3,6 +3,8 @@ import {
   QueryList, DoCheck, OnDestroy, AfterViewInit
 } from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+
 import { ProductListComponent } from './product-list/product-list.component';
 
 import { Product } from '../service/product/product';
@@ -26,6 +28,7 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   constructor(private productService: ProductService) { }
   product: Product = new Product();
   validationRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
+  message: string;
   ngOnInit(): void {
     console.log(this.productChildrenComponent);
     // this.products = [
@@ -40,8 +43,12 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
 
   }
 
-  save(): void {
+  save(productForm: NgForm): void {
     console.log(this.product);
+    this.productService.saveProduct(this.product);
+    this.message = "Product saved successfully!"
+    this.product = new Product();
+    productForm.reset();
   }
 
   ngDoCheck(): void {
