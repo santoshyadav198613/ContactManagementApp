@@ -1,32 +1,34 @@
-<h1>
-  Product List
-</h1>
+ 
+  <h1>
+    Product List
+  </h1>
 
-{{productList| json}}
-<table class="table">
-  <thead>
-    <tr>
-     <th>Id</th>
-     <th>Name</th>
-     <th>Price</th>
-     <th>Manufacturing Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of productList">
-      <td>
-        {{product.id}}
-      </td>
-      <td>
+  {{productList| json}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Manufacturing Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productList">
+        <td>
+          {{product.id}}
+        </td>
+        <td>
           {{product.name}}
-      </td>
-      <td>
+        </td>
+        <td>
           {{product.price}}
-      </td>
-      <td>
+        </td>
+        <td>
           {{product.mfd}}
-      </td>
-    </tr>
+        </td>
+      </tr>
 
-  </tbody>
-</table>
+    </tbody>
+  </table>
+ 

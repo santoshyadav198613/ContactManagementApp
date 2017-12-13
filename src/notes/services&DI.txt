@@ -17,7 +17,6 @@ After service is create it should be registered to use.
 2. Non-class services
 
 
-
 DI:
 
 Dependency Injection: 
@@ -40,6 +39,8 @@ http://reactivex.io/rxjs/
 
 
 Non-Singleton:
+1. value provider: -- after forms
+2. factory: -- after routing
 
 Register a service with component.
 

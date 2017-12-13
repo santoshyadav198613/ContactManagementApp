@@ -24,7 +24,8 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   products: Product[] = [];
   // productService : ProductService =new ProductService();
   constructor(private productService: ProductService) { }
-
+  product: Product = new Product();
+  validationRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
   ngOnInit(): void {
     console.log(this.productChildrenComponent);
     // this.products = [
@@ -37,6 +38,10 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
     );
     this.productListComponent.productList = this.products;
 
+  }
+
+  save(): void {
+    console.log(this.product);
   }
 
   ngDoCheck(): void {

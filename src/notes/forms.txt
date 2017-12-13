@@ -1,0 +1,35 @@
+What is the importance forms:
+collect user input.
+do some action after taking input.
+Send data to API.
+two way binding.
+
+Types:
+1. Template based form
+2. Reactive forms
+
+Template Based Forms:
+
+What:
+Gives more control to html.
+Suggested forms with easy structure, no dynamic controls.
+
+How:
+1. import { FormsModule } from '@angular/forms';
+2. add FormsModule to imports array, so we can template based forms functionality in our app.
+
+
+Validations:
+1. required
+2. email  -- No
+3. min -- No
+4. max  -- No
+5. minLength
+6. maxLength
+7. pattern
+8. custom validation -- To be discussed during custom directives.
+
+
+pristine -- if true our form is in fresh state.
+dirty -- as soon as we enter some values for any input control.
+touched -- as soon as we enter some value and click on your form.

@@ -1,6 +1,52 @@
-<con-header>
+<h1>
+  Product Form
+</h1>
+<div class="row">
+  {{product | json}} {{productForm.invalid | json }} {{productForm.valid | json }} {{productForm.pristine | json }} {{productForm.dirty
+  | json }} {{productForm.touched | json }} {{productForm.value | json }}
+  <form #productForm="ngForm" (submit)="save()" class="col-md-6">
+    <div class="form-group">
+      <input required class="form-control" #id="ngModel" type="number" placeholder="Id" name="id" [(ngModel)]="product.id"> {{id.invalid|json}} {{id.valid|json}} {{id.pristine|json}} {{id.dirty|json}} {{id.touched|json}} {{id.value|json}}
+      {{id.errors|json}}
+      <div class="alert alert-danger" [hidden]="id.valid || id.pristine">
+        Please enter the Product Id.
+      </div>
+    </div>
+    <div class="form-group">
+      <input [pattern]="validationRegex" required minlength="5" maxlength="12" #pname="ngModel" class="form-control" type="text"
+        placeholder="Product Name" name="name" [(ngModel)]="product.name"> {{pname.invalid|json}} {{pname.valid|json}} {{pname.pristine|json}} {{pname.dirty|json}} {{pname.touched|json}} {{pname.value|json}}
+      {{pname.errors|json}}
+      <div class="alert alert-danger" [hidden]="pname.valid || pname.pristine">
+        Please provie the email.
+      </div>
+      <div class="alert alert-danger" [hidden]="pname.errors === null  || pname.pristine">
+        Please enter a valid email.
+      </div>
+      <div *ngIf="pname.errors !== null && pname.errors.minlength">
+        Please enter a valid email with 5 characters.
+      </div>
+      <div *ngIf=" pname.errors !== null && pname.errors.required ">
+        Please provie the email.
+      </div>
+      <div *ngIf="pname.errors !== null && pname.errors.pattern">
+        Please enter a valid email.
+      </div>
+    </div>
+    <div class="form-group">
+      <input required class="form-control" type="number" placeholder="Product Price" name="price" [(ngModel)]="product.price">
+    </div>
+    <div class="form-group">
+      <input required class="form-control" type="date" placeholder="Manufacturing Date" name="mfd" [(ngModel)]="product.mfd">
+    </div>
+    <div>
+      <button [disabled]="productForm.invalid" type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>
+
+<!-- <con-header>
   <con-product-list></con-product-list>
-</con-header>
+</con-header> -->
 
 <con-product-list></con-product-list>
 <con-product-list></con-product-list>
