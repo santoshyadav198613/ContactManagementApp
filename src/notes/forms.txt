@@ -21,7 +21,7 @@ How:
 
 Validations:
 1. required
-2. email  -- No
+2. email  -- No 
 3. min -- No
 4. max  -- No
 5. minLength
@@ -33,3 +33,31 @@ Validations:
 pristine -- if true our form is in fresh state.
 dirty -- as soon as we enter some values for any input control.
 touched -- as soon as we enter some value and click on your form.
+
+Reactive forms
+
+1. import ReactiveFormsModule from '@angular/forms'
+2. add ReactiveFormsModule to imports array
+
+1. Forms will be created in typescript
+
+advantage: Gives more control to typescript.
+no need to create the model.
+We can add controls dynamically.
+
+
+TS: FormGroup, FormBuilde, FormControl , FormArray 
+Validation: Validators class is used for the same.
+
+HTML: formGroup, formControlName ,  
+
+
+Validations:
+1. required
+2. email 
+3. min -- No
+4. max  -- No
+5. minLength
+6. maxLength
+7. pattern
+8. custom validation -- To be discussed during custom directives.

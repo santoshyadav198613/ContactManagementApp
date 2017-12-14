@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 
 import { ProductService } from './service/product/product.service';
 import { NewproductService } from './service/product/newproduct.service';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,13 @@ import { NewproductService } from './service/product/newproduct.service';
     DepartmentListComponent,
     ProductComponent,
     ProductListComponent,
-    HeaderComponent
+    HeaderComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     // ProductService, shortcut
