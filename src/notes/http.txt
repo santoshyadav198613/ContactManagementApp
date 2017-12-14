@@ -1,0 +1,18 @@
+http:
+
+Angular support REST API.
+
+verbs:
+GET
+POST
+PUT 
+DELETE
+JSONP
+OPTIONS
+
+
+Why:
+For communication with server.
+
+How:
+

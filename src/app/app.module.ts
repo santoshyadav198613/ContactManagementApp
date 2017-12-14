@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { EmployeeComponent } from './employee/employee.component';
@@ -15,6 +15,8 @@ import { HeaderComponent } from './header/header.component';
 import { ProductService } from './service/product/product.service';
 import { NewproductService } from './service/product/newproduct.service';
 import { CustomerComponent } from './customer/customer.component';
+import { TodoComponent } from './todo/todo.component';
+import { TodoListComponent } from './todo/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { CustomerComponent } from './customer/customer.component';
     ProductComponent,
     ProductListComponent,
     HeaderComponent,
-    CustomerComponent
+    CustomerComponent,
+    TodoComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     // ProductService, shortcut
