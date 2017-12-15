@@ -1,0 +1,19 @@
+Routing:
+Navigation 
+
+Why:
+Gives user flexibility to see limited resources at a time.
+Gives the flexibility to hide some secure components from un-authorized users.
+
+
+How:
+import @angular/router
+and add to imports array.
+
+
+<router-outlet></router-outlet>
+
+
+Angular Modules:
+1. Routing Module:
+2. Feature Module:

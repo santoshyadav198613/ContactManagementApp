@@ -30,7 +30,7 @@ export class TodoListComponent implements OnInit {
           console.log(event.loaded);
           console.log(event.total);
         }
-        else if (event instanceof HttpResponse) {
+        else if (event.type === HttpEventType.Response) {
           console.log(event.body);
         }
       },
