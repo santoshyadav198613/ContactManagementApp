@@ -16,3 +16,14 @@ For communication with server.
 
 How:
 
+import { HttpClientModule } from '@angular/common/http';
+add to imports array.
+
+Http Interceptor:
+
+We can modify the actual api call before it is sent to API.
+implement the HttpInterceptor interface.
+
+Register the api Interceptor using below syntax:
+ { provide:HTTP_INTERCEPTORS , useClass: ApiinterceptorService, multi : true  }
+ multi: true means we are adding service in ann array.

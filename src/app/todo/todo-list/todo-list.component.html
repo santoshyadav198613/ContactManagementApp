@@ -2,4 +2,26 @@
   Todo List
 </h1>
 
-{{todoList| json}}
+<!-- {{todoList| json}} -->
+<table class="table">
+<thead>
+  <tr>
+    <th>Sr.No</th>
+    <th>User Id</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Completed</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let todo of todoList, let i=index">
+        <td>{{i}}</td>
+        <td>{{todo.userId}}</td>
+        <td>{{todo.id}}</td>
+        <td>{{todo.title}}</td>
+        <td>{{todo.completed}}</td>
+      </tr>
+</tbody>
+
+
+</table>

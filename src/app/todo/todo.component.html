@@ -2,5 +2,21 @@
   Todo Component
 </h1>
 
+<form (submit)="saveTodo();todoForm.reset()" #todoForm="ngForm">
+  <div class="form-group">
+    <input required class="form-control" type="number" [(ngModel)]="todo.userId" name="userid" placeholder="User Id">
+  </div>
+  <div class="form-group">
+    <input required class="form-control" type="text" [(ngModel)]="todo.title" name="title" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="checkbox" [(ngModel)]="todo.completed" name="completed" placeholder="Completed">
+  </div>
+  <div>
+    <button [disabled]="todoForm.invalid" type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
+
+<hr>
 
 <con-todo-list></con-todo-list>

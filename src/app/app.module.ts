@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule ,  HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { EmployeeComponent } from './employee/employee.component';
@@ -17,6 +17,8 @@ import { NewproductService } from './service/product/newproduct.service';
 import { CustomerComponent } from './customer/customer.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
+
+import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
   ],
   providers: [
     // ProductService, shortcut
-    { provide: ProductService, useClass: NewproductService }
+    { provide: ProductService, useClass: NewproductService },
+    { provide:HTTP_INTERCEPTORS , useClass: ApiinterceptorService, multi : true  }
   ],
   bootstrap: [EmployeeComponent]
 })
