@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Employee } from './employee';
+import { LoginService } from '../service/login/login.service';
 
 import { ProductService } from '../service/product/product.service';
 
@@ -25,7 +26,8 @@ export class EmployeeComponent {
   empRole: string = 'Super Admin';
   // employeeList : Array<Employee> = 
   empFromChild: Employee= new Employee();
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+      public loginService: LoginService) { }
 
 
   toggle() {

@@ -17,3 +17,35 @@ and add to imports array.
 Angular Modules:
 1. Routing Module:
 2. Feature Module:
+3. Shared Module:
+
+
+dynamic routes:
+
+todo/1
+
+
+Router -- This service will help us to navigate from TS code.
+
+Guards:
+canActivate -- restrict access to routes bases on business rule.
+canAcivateChild
+canDeActiavte
+canDeActiavteChild
+Resolve -- it is used to prefetch the data.
+
+
+lazy loading:
+
+Why:
+download the least used module on demand.
+
+pre-requisite:
+1. we should have featuer module
+2. routing configuration need to be with feature module.
+3. the module which needs to be laxy loaded . should not share anything.
+4. The module should not be part of any other module.
+
+Children
+dynamic router
+canActivateChild

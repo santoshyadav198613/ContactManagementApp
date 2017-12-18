@@ -1,0 +1,14 @@
+Pipes:
+
+What:
+pipes are used to transform our data, it never changes the actual value.
+
+How:
+
+Types:
+1. lowercase
+2. uppercase
+3. currency
+4. date
+5. json
+6. percent

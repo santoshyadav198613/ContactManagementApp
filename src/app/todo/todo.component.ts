@@ -6,8 +6,9 @@ import { ToDo } from '../service/todo/todo';
 @Component({
   selector: 'con-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css'],
-  providers: [TodoService]
+  styleUrls: ['./todo.component.css']
+  // ,
+  // providers: [TodoService]
 })
 export class TodoComponent implements OnInit {
   todo: ToDo = new ToDo();

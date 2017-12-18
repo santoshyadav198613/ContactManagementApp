@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { RouterModule } from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
 import { ProductModule } from './product/product.module';
+
+import { SharedModule } from './shared/shared.module';
+import { TodoModule } from './todo/todo.module';
 
 import { EmployeeComponent } from './employee/employee.component';
 import { DepartmentComponent } from './department/department.component';
@@ -17,11 +20,15 @@ import { HeaderComponent } from './header/header.component';
 import { ProductService } from './service/product/product.service';
 import { NewproductService } from './service/product/newproduct.service';
 import { CustomerComponent } from './customer/customer.component';
-import { TodoComponent } from './todo/todo.component';
-import { TodoListComponent } from './todo/todo-list/todo-list.component';
+// import { TodoComponent } from './todo/todo.component';
+// import { TodoListComponent } from './todo/todo-list/todo-list.component';
 
 import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LoginComponent } from './login/login.component';
+
+import { LoginService } from './service/login/login.service';
+import { AuthGuard } from './service/guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -33,17 +40,20 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     // ProductListComponent,
     HeaderComponent,
     CustomerComponent,
-    TodoComponent,
-    TodoListComponent,
-    PagenotfoundComponent
+    // TodoComponent,
+    // TodoListComponent,
+    PagenotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    RoutingModule,
-    ProductModule
+    SharedModule,
+    // FormsModule,
+    // ReactiveFormsModule,
+    // HttpClientModule,
+    ProductModule,
+    // TodoModule,
+    RoutingModule
     // RouterModule.forRoot(
     //   [
     //     { path: 'customer', component: CustomerComponent },
@@ -57,6 +67,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
   ],
   providers: [
     // ProductService, shortcut
+    LoginService,AuthGuard,
     { provide: ProductService, useClass: NewproductService },
     { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }
   ],

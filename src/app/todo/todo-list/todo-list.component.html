@@ -4,24 +4,26 @@
 
 <!-- {{todoList| json}} -->
 <table class="table">
-<thead>
-  <tr>
-    <th>Sr.No</th>
-    <th>User Id</th>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Completed</th>
-  </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let todo of todoList, let i=index">
-        <td>{{i}}</td>
-        <td>{{todo.userId}}</td>
-        <td>{{todo.id}}</td>
-        <td>{{todo.title}}</td>
-        <td>{{todo.completed}}</td>
-      </tr>
-</tbody>
-
-
+  <thead>
+    <tr>
+      <th>Sr.No</th>
+      <th>User Id</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Completed</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todoList; let i=index">
+      <td>{{i}}</td>
+      <td>{{todo.userId}}</td>
+      <td>{{todo.id}}</td>
+      <td>{{todo.title}}</td>
+      <td>{{todo.completed}}</td>
+      <td>
+        <button class="btn btn-success"  [routerLink]="[todo.userId]">Details</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
