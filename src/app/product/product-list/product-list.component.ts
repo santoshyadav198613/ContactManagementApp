@@ -9,6 +9,7 @@ import { Product } from '../../service/product/product';
 })
 export class ProductListComponent implements OnInit {
   productList: Product[];
+  amount: number= 0;
   constructor() { }
 
   ngOnInit() {

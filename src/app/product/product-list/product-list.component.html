@@ -1,34 +1,31 @@
- 
-  <h1>
-    Product List
-  </h1>
+<h1>
+  Product List
+</h1>
+<input class="form-control" type="number" name="prc" [(ngModel)]="amount" placeholder="Price"> {{productList| json}}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Manufacturing Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList | price : amount ">
+      <td>
+        {{product.id | percent}}
+      </td>
+      <td>
+        {{product.name | uppercase}}
+      </td>
+      <td>
+        {{product.price | currency : 'INR' }}
+      </td>
+      <td>
+        {{product.mfd | date : 'dd-MMM-yyyy' }}
+      </td>
+    </tr>
 
-  {{productList| json}}
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Manufacturing Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of productList">
-        <td>
-          {{product.id | percent}}
-        </td>
-        <td>
-          {{product.name | uppercase}}
-        </td>
-        <td>
-          {{product.price | currency : 'INR' }}
-        </td>
-        <td>
-          {{product.mfd | date : 'dd-MMM-yyyy' }}
-        </td>
-      </tr>
-
-    </tbody>
-  </table>
- 
+  </tbody>
+</table>

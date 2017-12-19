@@ -38,9 +38,9 @@ provide different functions:
 http://reactivex.io/rxjs/
 
 
-Non-Singleton:
-1. value provider: -- after forms
-2. factory: -- after routing
+Non-class based services:
+1. value provider: -- We want some constant vaue to be use across the application.
+2. factory: -- We need some data from another service at run-time.
 
 Register a service with component.
 

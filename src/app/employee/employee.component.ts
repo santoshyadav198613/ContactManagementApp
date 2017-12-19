@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { Employee } from './employee';
 import { LoginService } from '../service/login/login.service';
 
 import { ProductService } from '../service/product/product.service';
+import { IValueProvider } from '../service/valueProvider/IvalueProvider';
+import { APPCONFIG } from '../service/valueProvider/valueProvider';
 
 @Component({
   selector: 'app-employee',
@@ -11,7 +13,7 @@ import { ProductService } from '../service/product/product.service';
   // template: '<h1>Employee from template tag</h1>',
   styleUrls: ['./employee.component.css']
 })
-export class EmployeeComponent {
+export class EmployeeComponent implements OnInit {
   empName: string = 'Deepak';
   lastName: string = 'Test';
   empId: number = 1;
@@ -25,9 +27,15 @@ export class EmployeeComponent {
   ];
   empRole: string = 'Super Admin';
   // employeeList : Array<Employee> = 
-  empFromChild: Employee= new Employee();
+  empFromChild: Employee = new Employee();
   constructor(private productService: ProductService,
-      public loginService: LoginService) { }
+    public loginService: LoginService,
+    @Inject(APPCONFIG) private value: IValueProvider) { }
+
+  ngOnInit(): void {
+      console.log(this.value.pageSize);
+      console.log(this.value);
+  }
 
 
   toggle() {

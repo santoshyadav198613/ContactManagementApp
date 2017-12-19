@@ -10,6 +10,10 @@ import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { AuthGuard } from '../service/guard/auth.guard';
 import { TodoResolveGuard } from '../service/todo/todo-resolve.guard';
 
+import { todoProvider } from '../service/todo/todo.factory';
+import { LoginService } from '../service/login/login.service';
+import { HttpClient } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,9 +23,13 @@ import { TodoResolveGuard } from '../service/todo/todo-resolve.guard';
         path: '', component: TodoComponent, canActivate: [AuthGuard],
         resolve: {
           todoList: TodoResolveGuard
-        }
-      },
-
+        }, 
+        canActivateChild: [AuthGuard],
+        children: [
+          { path: ':id', component: TodoDetailsComponent }
+        ]
+      }
+      // { path: ':id', component: TodoDetailsComponent }
     ])
   ],
   declarations: [
@@ -29,6 +37,9 @@ import { TodoResolveGuard } from '../service/todo/todo-resolve.guard';
     TodoListComponent,
     TodoDetailsComponent
   ],
-  providers: [TodoService, TodoResolveGuard]
+  providers: [
+    // TodoService
+    { provide : TodoService , useFactory : todoProvider , deps: [LoginService, HttpClient] }
+    , TodoResolveGuard]
 })
 export class TodoModule { }

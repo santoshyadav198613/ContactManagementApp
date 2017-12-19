@@ -20,9 +20,9 @@
       <td>{{todo.userId}}</td>
       <td>{{todo.id}}</td>
       <td>{{todo.title}}</td>
-      <td>{{todo.completed}}</td>
+      <td>{{todo.completed | completed}}</td>
       <td>
-        <button class="btn btn-success"  [routerLink]="[todo.userId]">Details</button>
+        <button class="btn btn-success"  [routerLink]="[todo.id]">Details</button>
       </td>
     </tr>
   </tbody>

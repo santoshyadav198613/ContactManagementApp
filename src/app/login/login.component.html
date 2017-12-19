@@ -4,10 +4,11 @@
 
 <form class="col-md-6" (submit)="login()" #loginForm="ngForm">
   <div class="form-group">
-    <input required class="form-control" type="text" name="userName" [(ngModel)]="user.userName" placeholder="UserName">
+    <input conHover required class="form-control" type="text" name="userName" [(ngModel)]="user.userName" placeholder="UserName">
   </div>
   <div class="form-group">
-      <input required type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="password">
+      <input #password="ngModel" conHover conPasswordValidator required type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="password">
+      {{password.errors | json}}
   </div>
   <div>
     <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>

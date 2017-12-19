@@ -30,6 +30,12 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/guard/auth.guard';
 
+import { APPCONFIG , AppConstants } from './service/valueProvider/valueProvider';
+// import { PasswordValidatorDirective } from './customDirective/password-validator.directive';
+// import { HoverDirective } from './customDirective/hover.directive';
+// import { PricePipe } from './customPipes/price.pipe';
+// import { CompletedPipe } from './customPipes/completed.pipe';
+
 @NgModule({
   declarations: [
     EmployeeComponent,
@@ -44,6 +50,10 @@ import { AuthGuard } from './service/guard/auth.guard';
     // TodoListComponent,
     PagenotfoundComponent,
     LoginComponent
+    // PasswordValidatorDirective
+    // HoverDirective
+    // PricePipe
+    // CompletedPipe
   ],
   imports: [
     BrowserModule,
@@ -69,6 +79,7 @@ import { AuthGuard } from './service/guard/auth.guard';
     // ProductService, shortcut
     LoginService,AuthGuard,
     { provide: ProductService, useClass: NewproductService },
+    { provide : APPCONFIG , useValue : AppConstants },
     { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }
   ],
   bootstrap: [EmployeeComponent]

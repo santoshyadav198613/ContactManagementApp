@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
+import { CustomValidator } from '../custom/custom.validator';
 
 @Component({
   selector: 'con-customer',
@@ -26,7 +27,7 @@ export class CustomerComponent implements OnInit {
         }),
       cards: this.fb.array(
         [
-            this.buildCard()
+          this.buildCard()
         ]
       )
     });
@@ -34,8 +35,8 @@ export class CustomerComponent implements OnInit {
 
   buildCard(): FormGroup {
     return this.fb.group({
-      cardNumber: new FormControl('', [Validators.required]),
-      expiryMonth: new FormControl('', [Validators.required]),
+      cardNumber: new FormControl('', [Validators.required, CustomValidator.cardValidator]),
+      expiryMonth: new FormControl('', [Validators.required, CustomValidator.monthValidator]),
       expiryYear: new FormControl('', [Validators.required]),
       cvv: new FormControl('', [Validators.required])
     })
@@ -43,7 +44,7 @@ export class CustomerComponent implements OnInit {
 
   addCard() {
     let cards = this.customerForm.controls['cards'] as FormArray;
-    cards.push( this.buildCard() );
+    cards.push(this.buildCard());
   }
 
   removeCard(i: number) {

@@ -17,11 +17,11 @@ import { AuthGuard } from '../service/guard/auth.guard';
     CommonModule,
     RouterModule.forRoot(
       [
-        { path: 'customer', component: CustomerComponent , canActivate: [AuthGuard] },
-        { path: 'department', component: DepartmentComponent ,canActivate: [AuthGuard]  },
-        { path: 'product', component: ProductComponent ,canActivate: [AuthGuard] },
-        { path: 'product/:id', component: ProductDetailsComponent  },
-        { path: 'login', component: LoginComponent },
+        { path: 'customer', component: CustomerComponent , canActivate: [AuthGuard] , pathMatch:'full' },
+        { path: 'department', component: DepartmentComponent ,canActivate: [AuthGuard]  , pathMatch:'full' },
+        { path: 'product', component: ProductComponent ,canActivate: [AuthGuard]  , pathMatch:'full'},
+        { path: 'product/:id', component: ProductDetailsComponent  , pathMatch:'full' },
+        { path: 'login', component: LoginComponent  , pathMatch:'full' },
         { path: 'todo', loadChildren : '../todo/todo.module#TodoModule' },
         { path: '', redirectTo: 'login', pathMatch: 'full' },
         { path: '**', component: PagenotfoundComponent }
